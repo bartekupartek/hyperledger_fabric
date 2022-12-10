@@ -23,7 +23,7 @@ be found at <https://hexdocs.pm/hyperledger_fabric>.
 
 Run Elixir bindings code generation:
 ```
-protoc --elixir_out=gen_descriptors=true,plugins=grpc,package_prefix=hyperledger_fabric.protos,gen_descriptors=true:./lib/protos \
+protoc --elixir_out=plugins=grpc,package_prefix=hyperledger_fabric.protos:./lib/protos \
   --proto_path=./fabric-protos \
   ./fabric-protos/*/**.proto
 ```
