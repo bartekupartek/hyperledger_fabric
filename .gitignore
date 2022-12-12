@@ -24,3 +24,5 @@ hyperledger_fabric-*.tar
 
 # Temporary files, for example, from tests.
 /tmp/
+
+/crypto-config

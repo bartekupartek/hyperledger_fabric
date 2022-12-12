@@ -21,7 +21,7 @@ defmodule HyperledgerFabric.Protos.Rwset.TxReadWriteSet.DataModel do
     }
   end
 
-  field :KV, 0
+  field(:KV, 0)
 end
 
 defmodule HyperledgerFabric.Protos.Rwset.TxReadWriteSet do
@@ -90,15 +90,17 @@ defmodule HyperledgerFabric.Protos.Rwset.TxReadWriteSet do
     }
   end
 
-  field :data_model, 1,
+  field(:data_model, 1,
     type: HyperledgerFabric.Protos.Rwset.TxReadWriteSet.DataModel,
     json_name: "dataModel",
     enum: true
+  )
 
-  field :ns_rwset, 2,
+  field(:ns_rwset, 2,
     repeated: true,
     type: HyperledgerFabric.Protos.Rwset.NsReadWriteSet,
     json_name: "nsRwset"
+  )
 end
 
 defmodule HyperledgerFabric.Protos.Rwset.NsReadWriteSet do
@@ -165,13 +167,14 @@ defmodule HyperledgerFabric.Protos.Rwset.NsReadWriteSet do
     }
   end
 
-  field :namespace, 1, type: :string
-  field :rwset, 2, type: :bytes
+  field(:namespace, 1, type: :string)
+  field(:rwset, 2, type: :bytes)
 
-  field :collection_hashed_rwset, 3,
+  field(:collection_hashed_rwset, 3,
     repeated: true,
     type: HyperledgerFabric.Protos.Rwset.CollectionHashedReadWriteSet,
     json_name: "collectionHashedRwset"
+  )
 end
 
 defmodule HyperledgerFabric.Protos.Rwset.CollectionHashedReadWriteSet do
@@ -238,9 +241,9 @@ defmodule HyperledgerFabric.Protos.Rwset.CollectionHashedReadWriteSet do
     }
   end
 
-  field :collection_name, 1, type: :string, json_name: "collectionName"
-  field :hashed_rwset, 2, type: :bytes, json_name: "hashedRwset"
-  field :pvt_rwset_hash, 3, type: :bytes, json_name: "pvtRwsetHash"
+  field(:collection_name, 1, type: :string, json_name: "collectionName")
+  field(:hashed_rwset, 2, type: :bytes, json_name: "hashedRwset")
+  field(:pvt_rwset_hash, 3, type: :bytes, json_name: "pvtRwsetHash")
 end
 
 defmodule HyperledgerFabric.Protos.Rwset.TxPvtReadWriteSet do
@@ -293,15 +296,17 @@ defmodule HyperledgerFabric.Protos.Rwset.TxPvtReadWriteSet do
     }
   end
 
-  field :data_model, 1,
+  field(:data_model, 1,
     type: HyperledgerFabric.Protos.Rwset.TxReadWriteSet.DataModel,
     json_name: "dataModel",
     enum: true
+  )
 
-  field :ns_pvt_rwset, 2,
+  field(:ns_pvt_rwset, 2,
     repeated: true,
     type: HyperledgerFabric.Protos.Rwset.NsPvtReadWriteSet,
     json_name: "nsPvtRwset"
+  )
 end
 
 defmodule HyperledgerFabric.Protos.Rwset.NsPvtReadWriteSet do
@@ -354,12 +359,13 @@ defmodule HyperledgerFabric.Protos.Rwset.NsPvtReadWriteSet do
     }
   end
 
-  field :namespace, 1, type: :string
+  field(:namespace, 1, type: :string)
 
-  field :collection_pvt_rwset, 2,
+  field(:collection_pvt_rwset, 2,
     repeated: true,
     type: HyperledgerFabric.Protos.Rwset.CollectionPvtReadWriteSet,
     json_name: "collectionPvtRwset"
+  )
 end
 
 defmodule HyperledgerFabric.Protos.Rwset.CollectionPvtReadWriteSet do
@@ -412,6 +418,6 @@ defmodule HyperledgerFabric.Protos.Rwset.CollectionPvtReadWriteSet do
     }
   end
 
-  field :collection_name, 1, type: :string, json_name: "collectionName"
-  field :rwset, 2, type: :bytes
+  field(:collection_name, 1, type: :string, json_name: "collectionName")
+  field(:rwset, 2, type: :bytes)
 end

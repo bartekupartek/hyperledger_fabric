@@ -76,19 +76,21 @@ defmodule HyperledgerFabric.Protos.Kvrwset.KVRWSet do
     }
   end
 
-  field :reads, 1, repeated: true, type: HyperledgerFabric.Protos.Kvrwset.KVRead
+  field(:reads, 1, repeated: true, type: HyperledgerFabric.Protos.Kvrwset.KVRead)
 
-  field :range_queries_info, 2,
+  field(:range_queries_info, 2,
     repeated: true,
     type: HyperledgerFabric.Protos.Kvrwset.RangeQueryInfo,
     json_name: "rangeQueriesInfo"
+  )
 
-  field :writes, 3, repeated: true, type: HyperledgerFabric.Protos.Kvrwset.KVWrite
+  field(:writes, 3, repeated: true, type: HyperledgerFabric.Protos.Kvrwset.KVWrite)
 
-  field :metadata_writes, 4,
+  field(:metadata_writes, 4,
     repeated: true,
     type: HyperledgerFabric.Protos.Kvrwset.KVMetadataWrite,
     json_name: "metadataWrites"
+  )
 end
 
 defmodule HyperledgerFabric.Protos.Kvrwset.HashedRWSet do
@@ -155,20 +157,23 @@ defmodule HyperledgerFabric.Protos.Kvrwset.HashedRWSet do
     }
   end
 
-  field :hashed_reads, 1,
+  field(:hashed_reads, 1,
     repeated: true,
     type: HyperledgerFabric.Protos.Kvrwset.KVReadHash,
     json_name: "hashedReads"
+  )
 
-  field :hashed_writes, 2,
+  field(:hashed_writes, 2,
     repeated: true,
     type: HyperledgerFabric.Protos.Kvrwset.KVWriteHash,
     json_name: "hashedWrites"
+  )
 
-  field :metadata_writes, 3,
+  field(:metadata_writes, 3,
     repeated: true,
     type: HyperledgerFabric.Protos.Kvrwset.KVMetadataWriteHash,
     json_name: "metadataWrites"
+  )
 end
 
 defmodule HyperledgerFabric.Protos.Kvrwset.KVRead do
@@ -221,8 +226,8 @@ defmodule HyperledgerFabric.Protos.Kvrwset.KVRead do
     }
   end
 
-  field :key, 1, type: :string
-  field :version, 2, type: HyperledgerFabric.Protos.Kvrwset.Version
+  field(:key, 1, type: :string)
+  field(:version, 2, type: HyperledgerFabric.Protos.Kvrwset.Version)
 end
 
 defmodule HyperledgerFabric.Protos.Kvrwset.KVWrite do
@@ -289,9 +294,9 @@ defmodule HyperledgerFabric.Protos.Kvrwset.KVWrite do
     }
   end
 
-  field :key, 1, type: :string
-  field :is_delete, 2, type: :bool, json_name: "isDelete"
-  field :value, 3, type: :bytes
+  field(:key, 1, type: :string)
+  field(:is_delete, 2, type: :bool, json_name: "isDelete")
+  field(:value, 3, type: :bytes)
 end
 
 defmodule HyperledgerFabric.Protos.Kvrwset.KVMetadataWrite do
@@ -344,8 +349,8 @@ defmodule HyperledgerFabric.Protos.Kvrwset.KVMetadataWrite do
     }
   end
 
-  field :key, 1, type: :string
-  field :entries, 2, repeated: true, type: HyperledgerFabric.Protos.Kvrwset.KVMetadataEntry
+  field(:key, 1, type: :string)
+  field(:entries, 2, repeated: true, type: HyperledgerFabric.Protos.Kvrwset.KVMetadataEntry)
 end
 
 defmodule HyperledgerFabric.Protos.Kvrwset.KVReadHash do
@@ -398,8 +403,8 @@ defmodule HyperledgerFabric.Protos.Kvrwset.KVReadHash do
     }
   end
 
-  field :key_hash, 1, type: :bytes, json_name: "keyHash"
-  field :version, 2, type: HyperledgerFabric.Protos.Kvrwset.Version
+  field(:key_hash, 1, type: :bytes, json_name: "keyHash")
+  field(:version, 2, type: HyperledgerFabric.Protos.Kvrwset.Version)
 end
 
 defmodule HyperledgerFabric.Protos.Kvrwset.KVWriteHash do
@@ -480,10 +485,10 @@ defmodule HyperledgerFabric.Protos.Kvrwset.KVWriteHash do
     }
   end
 
-  field :key_hash, 1, type: :bytes, json_name: "keyHash"
-  field :is_delete, 2, type: :bool, json_name: "isDelete"
-  field :value_hash, 3, type: :bytes, json_name: "valueHash"
-  field :is_purge, 4, type: :bool, json_name: "isPurge"
+  field(:key_hash, 1, type: :bytes, json_name: "keyHash")
+  field(:is_delete, 2, type: :bool, json_name: "isDelete")
+  field(:value_hash, 3, type: :bytes, json_name: "valueHash")
+  field(:is_purge, 4, type: :bool, json_name: "isPurge")
 end
 
 defmodule HyperledgerFabric.Protos.Kvrwset.KVMetadataWriteHash do
@@ -536,8 +541,8 @@ defmodule HyperledgerFabric.Protos.Kvrwset.KVMetadataWriteHash do
     }
   end
 
-  field :key_hash, 1, type: :bytes, json_name: "keyHash"
-  field :entries, 2, repeated: true, type: HyperledgerFabric.Protos.Kvrwset.KVMetadataEntry
+  field(:key_hash, 1, type: :bytes, json_name: "keyHash")
+  field(:entries, 2, repeated: true, type: HyperledgerFabric.Protos.Kvrwset.KVMetadataEntry)
 end
 
 defmodule HyperledgerFabric.Protos.Kvrwset.KVMetadataEntry do
@@ -590,8 +595,8 @@ defmodule HyperledgerFabric.Protos.Kvrwset.KVMetadataEntry do
     }
   end
 
-  field :name, 1, type: :string
-  field :value, 2, type: :bytes
+  field(:name, 1, type: :string)
+  field(:value, 2, type: :bytes)
 end
 
 defmodule HyperledgerFabric.Protos.Kvrwset.Version do
@@ -644,8 +649,8 @@ defmodule HyperledgerFabric.Protos.Kvrwset.Version do
     }
   end
 
-  field :block_num, 1, type: :uint64, json_name: "blockNum"
-  field :tx_num, 2, type: :uint64, json_name: "txNum"
+  field(:block_num, 1, type: :uint64, json_name: "blockNum")
+  field(:tx_num, 2, type: :uint64, json_name: "txNum")
 end
 
 defmodule HyperledgerFabric.Protos.Kvrwset.RangeQueryInfo do
@@ -746,21 +751,23 @@ defmodule HyperledgerFabric.Protos.Kvrwset.RangeQueryInfo do
     }
   end
 
-  oneof :reads_info, 0
+  oneof(:reads_info, 0)
 
-  field :start_key, 1, type: :string, json_name: "startKey"
-  field :end_key, 2, type: :string, json_name: "endKey"
-  field :itr_exhausted, 3, type: :bool, json_name: "itrExhausted"
+  field(:start_key, 1, type: :string, json_name: "startKey")
+  field(:end_key, 2, type: :string, json_name: "endKey")
+  field(:itr_exhausted, 3, type: :bool, json_name: "itrExhausted")
 
-  field :raw_reads, 4,
+  field(:raw_reads, 4,
     type: HyperledgerFabric.Protos.Kvrwset.QueryReads,
     json_name: "rawReads",
     oneof: 0
+  )
 
-  field :reads_merkle_hashes, 5,
+  field(:reads_merkle_hashes, 5,
     type: HyperledgerFabric.Protos.Kvrwset.QueryReadsMerkleSummary,
     json_name: "readsMerkleHashes",
     oneof: 0
+  )
 end
 
 defmodule HyperledgerFabric.Protos.Kvrwset.QueryReads do
@@ -799,10 +806,11 @@ defmodule HyperledgerFabric.Protos.Kvrwset.QueryReads do
     }
   end
 
-  field :kv_reads, 1,
+  field(:kv_reads, 1,
     repeated: true,
     type: HyperledgerFabric.Protos.Kvrwset.KVRead,
     json_name: "kvReads"
+  )
 end
 
 defmodule HyperledgerFabric.Protos.Kvrwset.QueryReadsMerkleSummary do
@@ -869,7 +877,7 @@ defmodule HyperledgerFabric.Protos.Kvrwset.QueryReadsMerkleSummary do
     }
   end
 
-  field :max_degree, 1, type: :uint32, json_name: "maxDegree"
-  field :max_level, 2, type: :uint32, json_name: "maxLevel"
-  field :max_level_hashes, 3, repeated: true, type: :bytes, json_name: "maxLevelHashes"
+  field(:max_degree, 1, type: :uint32, json_name: "maxDegree")
+  field(:max_level, 2, type: :uint32, json_name: "maxLevel")
+  field(:max_level_hashes, 3, repeated: true, type: :bytes, json_name: "maxLevelHashes")
 end

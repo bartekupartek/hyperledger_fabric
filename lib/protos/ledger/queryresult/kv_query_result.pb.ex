@@ -62,9 +62,9 @@ defmodule HyperledgerFabric.Protos.Queryresult.KV do
     }
   end
 
-  field :namespace, 1, type: :string
-  field :key, 2, type: :string
-  field :value, 3, type: :bytes
+  field(:namespace, 1, type: :string)
+  field(:key, 2, type: :string)
+  field(:value, 3, type: :bytes)
 end
 
 defmodule HyperledgerFabric.Protos.Queryresult.KeyModification do
@@ -145,8 +145,8 @@ defmodule HyperledgerFabric.Protos.Queryresult.KeyModification do
     }
   end
 
-  field :tx_id, 1, type: :string, json_name: "txId"
-  field :value, 2, type: :bytes
-  field :timestamp, 3, type: Google.Protobuf.Timestamp
-  field :is_delete, 4, type: :bool, json_name: "isDelete"
+  field(:tx_id, 1, type: :string, json_name: "txId")
+  field(:value, 2, type: :bytes)
+  field(:timestamp, 3, type: Google.Protobuf.Timestamp)
+  field(:is_delete, 4, type: :bool, json_name: "isDelete")
 end
